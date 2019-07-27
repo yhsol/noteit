@@ -1,0 +1,23 @@
+- needed!
+  - create accounts
+  - password
+  - log in / log out
+  - posts
+    - upload posts
+      - text, photo, tag, link
+    - edit posts
+    - like / unlike
+    - comment / edit comment / delete comment
+  - users
+    - follow / unfollow
+    - see profile / edit profile
+    - notification
+  - search
+    - search by users
+    - search by title
+    - search by tag
+    - search by content
+    - how to set the priority?
+  - feed
+    - see feed
+    - explore
