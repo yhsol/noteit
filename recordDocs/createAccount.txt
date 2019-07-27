@@ -1,0 +1,33 @@
+[PBA] - create account
+대부분의 기능은 prisma 의 playground 기능을 활용하면 필요한 것들이 뭐가 있는지 찾을 수 있다.
+```
+type Mutation {
+  createAccount(
+    email: String!
+    username: String!
+    firstName: String
+    lastName: String
+    bio: String
+  ): User!
+}
+```
+로그인에 필요한 정보들을 Mutation 에 담는다. email 과 username 은 필수 요소로 지정한다.
+```
+import { prisma } from "../../../../generated/prisma-client";
+export default {
+  Mutation: {
+    createAccount: async (_, args) => {
+      const { email = "", username = "", firstName, lastName, bio } = args;
+      const user = await prisma.createUser({
+        email,
+        username,
+        firstName,
+        lastName,
+        bio
+      });
+      return user;
+    }
+  }
+};
+```
+args 에 지정한 값들을 가져와서 unpacked 하고 그 값들을 prisma 의 createUser 를 활용해서 연결한다.
