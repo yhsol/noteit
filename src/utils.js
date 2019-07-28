@@ -11,7 +11,6 @@ export const generateSecret = () => {
   const randomNumber = Math.floor(Math.random() * adjectives.length);
   return `${adjectives[randomNumber]} ${nouns[randomNumber]}`;
 };
-console.log(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
 
 const sendMail = email => {
   const options = {
@@ -29,7 +28,7 @@ export const sendSecretMail = (adress, secret) => {
     from: "noteit@noteit.com",
     to: adress,
     subject: "Check Your login secret!",
-    html: `Your log in secret is <br><strong>${secret}<strong></br> Copy and Paste Your app/website!`
+    html: `Your log in secret is <div><strong>${secret}</strong></div> Copy and Paste Your app/website!`
   };
   return sendMail(email);
 };
