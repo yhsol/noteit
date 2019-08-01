@@ -35,8 +35,8 @@ type Post {
 type Tag {
   id: ID! @id
   text: String!
-  user: User @relation(name: "TagOfUser")
-  post: Post @relation(name: "TagOfPost")
+  user: [User!]! @relation(name: "TagOfUser")
+  post: [Post!]! @relation(name: "TagOfPost")
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }

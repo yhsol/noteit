@@ -1,8 +1,3 @@
 type Mutation {
-  addPost(
-    text: String!
-    title: String!
-    tags: String!
-    location: String!
-  ): Post!
+  addPost(text: String!, title: String!, tags: [Tag], location: String): Post!
 }

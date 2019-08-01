@@ -18,7 +18,8 @@ export default {
         text,
         title,
         tags,
-        location
+        location,
+        files
       });
       return postContent;
     }

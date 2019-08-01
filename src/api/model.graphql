@@ -35,8 +35,8 @@ type Post {
 type Tag {
   id: ID!
   text: String!
-  user: User
-  post: Post
+  user: [User!]!
+  post: [Post!]!
   createdAt: String
   updatedAt: String
 }
