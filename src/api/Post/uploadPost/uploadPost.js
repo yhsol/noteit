@@ -17,9 +17,9 @@ export default {
         },
         text,
         title,
-        tags,
         location,
-        files
+        files,
+        tags
       });
       return postContent;
     }
