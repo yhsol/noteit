@@ -7,9 +7,13 @@ export default {
       const { email, secret } = args;
       const user = await prisma.user({ email });
       if (user.loginSecret === secret) {
+        await prisma.updateUser({
+          where: { id: user.id },
+          data: { loginSecret: "" }
+        });
         return generateToken(user.id);
       } else {
-        throw Error("You need to check Your confirm Secret!");
+        throw Error("You need to check your confirm secret!");
       }
     }
   }
