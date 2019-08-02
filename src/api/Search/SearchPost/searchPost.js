@@ -1,5 +1,7 @@
 import { prisma } from "../../../../generated/prisma-client";
 
+// TODO: search priority
+
 export default {
   Query: {
     searchPost: async (_, args) =>
