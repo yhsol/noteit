@@ -1,3 +1,9 @@
 type Mutation {
-  addPost(text: String!, title: String!, location: String): Post!
+  uploadPost(
+    text: String!
+    title: String!
+    files: [String!]!
+    tags: [String!]!
+    location: String!
+  ): Post!
 }
