@@ -5,7 +5,7 @@ import { prisma } from "../../../../generated/prisma-client";
 
 export default {
   Mutation: {
-    addPost: async (_, args, { request }) => {
+    uploadPost: async (_, args, { request }) => {
       isAuthenticated(request);
       const { user } = request;
       const { text, title, tags, location } = args;
