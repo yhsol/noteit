@@ -14,6 +14,12 @@ type User {
   comments: [Comment!]!
   rooms: [Room!]!
   loginSecret: String
+  postCount: Int!
+  followingCount: Int!
+  followersCount: Int!
+  fullName: String
+  isFollowing: Boolean!
+  itsMe: Boolean!
   createdAt: String
   updatedAt: String
 }
@@ -25,9 +31,12 @@ type Post {
   text: String!
   files: [File!]!
   location: String
-  tags: [Tag!]!
+  tags: [Tag]
   likes: [Like!]!
   comments: [Comment!]!
+  isLiked: Boolean!
+  commentCount: Int!
+  likeCount: Int!
   createdAt: String
   updatedAt: String
 }

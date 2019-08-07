@@ -2,12 +2,12 @@ import { prisma } from "../../../generated/prisma-client";
 
 export default {
   User: {
-    post: ({ id }) => prisma.user({ id }).posts(),
+    posts: ({ id }) => prisma.user({ id }).posts(),
     following: ({ id }) => prisma.user({ id }).following(),
     followers: ({ id }) => prisma.user({ id }).followers(),
-    like: ({ id }) => prisma.user({ id }).like(),
+    likes: ({ id }) => prisma.user({ id }).like(),
     comments: ({ id }) => prisma.user({ id }).comments(),
-    room: ({ id }) => prisma.user({ id }).rooms(),
+    rooms: ({ id }) => prisma.user({ id }).rooms(),
     postCount: ({ id }) =>
       prisma
         .postsConnection({ where: { user: { id } } })
