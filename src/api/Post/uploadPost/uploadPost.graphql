@@ -4,6 +4,6 @@ type Mutation {
     title: String!
     files: [String!]!
     tags: [String!]!
-    location: String!
+    location: String
   ): Post!
 }

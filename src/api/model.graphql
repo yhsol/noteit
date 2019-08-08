@@ -9,14 +9,13 @@ type User {
   following: [User!]!
   followers: [User!]!
   posts: [Post!]!
-  tags: [Tag!]!
   likes: [Like!]!
   comments: [Comment!]!
   rooms: [Room!]!
   loginSecret: String
-  postCount: Int!
-  followingCount: Int!
-  followersCount: Int!
+  postCount: Int
+  followingCount: Int
+  followersCount: Int
   fullName: String
   isFollowing: Boolean!
   itsMe: Boolean!
@@ -27,9 +26,9 @@ type User {
 type Post {
   id: ID!
   user: User
-  title: String
+  title: String!
   text: String!
-  files: [File!]!
+  files: [File]
   location: String
   tags: [Tag]
   likes: [Like!]!
@@ -44,8 +43,7 @@ type Post {
 type Tag {
   id: ID!
   text: String!
-  user: [User!]!
-  post: [Post!]!
+  post: Post
   createdAt: String
   updatedAt: String
 }

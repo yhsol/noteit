@@ -8,8 +8,8 @@ export default {
     uploadPost: async (_, args, { request }) => {
       isAuthenticated(request);
       const { user } = request;
-      const { text, title, tags, location } = args;
-      const postContent = await prisma.createPost({
+      const { text, title, tags, location, files } = args;
+      const post = await prisma.createPost({
         user: {
           connect: {
             id: user.id
@@ -17,11 +17,29 @@ export default {
         },
         text,
         title,
-        location,
-        files,
-        tags
+        location
       });
-      return postContent;
+      tags.forEach(async tag => {
+        await prisma.createTag({
+          text: tag,
+          post: {
+            connect: {
+              id: post.id
+            }
+          }
+        });
+      });
+      files.forEach(async file => {
+        await prisma.createFile({
+          url: file,
+          post: {
+            connect: {
+              id: post.id
+            }
+          }
+        });
+      });
+      return post;
     }
   }
 };
