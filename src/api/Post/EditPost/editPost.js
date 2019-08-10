@@ -9,13 +9,17 @@ export default {
     editPost: async (_, args, { request }) => {
       isAuthenticated(request);
       const { user } = request;
-      const { id, title, text, tags, location, action } = args;
+      const { id, title, text, tags, location, action, files } = args;
       const post = await prisma.$exists.post({ id, user: { id: user.id } });
       if (post) {
         if (action === EDIT) {
           return prisma.updatePost({
             where: { id },
-            data: { title, text, tags, location }
+            data: {
+              title,
+              text,
+              location
+            }
           });
         } else if (action === DELETE) {
           return prisma.deletePost({ id });
@@ -23,6 +27,16 @@ export default {
       } else {
         throw Error("You can't do that!");
       }
+      tags.forEach(async tag => {
+        await prisma.updateTag({
+          text: tag,
+          post: {
+            connect: {
+              id: post.id
+            }
+          }
+        });
+      });
     }
   }
 };
