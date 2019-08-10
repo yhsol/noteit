@@ -10,7 +10,7 @@ type Mutation {
     title: String
     tags: [String]
     location: String
-    action: ACTIONS
+    action: ACTIONS!
     files: [String]
   ): Post!
 }
