@@ -40,7 +40,7 @@ export default {
         },
         room: {
           connect: {
-            id: roomId
+            id: room.id
           }
         }
       });
