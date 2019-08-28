@@ -29,21 +29,13 @@ type Post {
   title: String!
   text: String!
   files: [File]
+  tags: [String]
   location: String
-  tags: [Tag]
   likes: [Like!]!
   comments: [Comment!]!
   isLiked: Boolean!
   commentCount: Int!
   likeCount: Int!
-  createdAt: String
-  updatedAt: String
-}
-
-type Tag {
-  id: ID!
-  text: String!
-  post: Post
   createdAt: String
   updatedAt: String
 }

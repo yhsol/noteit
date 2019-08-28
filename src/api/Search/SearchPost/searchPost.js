@@ -7,7 +7,12 @@ export default {
     searchPost: async (_, args) =>
       prisma.posts({
         where: {
-          OR: [{ title_contains: args.term }, { text_contains: args.term }]
+          OR: [
+            { title_contains: args.term },
+            { text_contains: args.term },
+            { tags_some: args.term },
+            { location_starts_with: args.term }
+          ]
         }
       })
   }

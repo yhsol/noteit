@@ -17,17 +17,8 @@ export default {
         },
         text,
         title,
+        tags,
         location
-      });
-      tags.forEach(async tag => {
-        await prisma.createTag({
-          text: tag,
-          post: {
-            connect: {
-              id: post.id
-            }
-          }
-        });
       });
       files.forEach(async file => {
         await prisma.createFile({
