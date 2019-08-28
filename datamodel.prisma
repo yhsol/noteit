@@ -24,7 +24,7 @@ type Post {
   text: String!
   files: [File] @relation(name: "FileOfPost", onDelete: CASCADE)
   location: String
-  tags: [String]
+  tags: String
   likes: [Like!]! @relation(name: "LikeOfPost", onDelete: CASCADE)
   comments: [Comment!]! @relation(name: "CommentOfPost", onDelete: CASCADE)
   createdAt: DateTime @createdAt

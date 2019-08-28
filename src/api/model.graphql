@@ -29,7 +29,7 @@ type Post {
   title: String!
   text: String!
   files: [File]
-  tags: [String]
+  tags: String
   location: String
   likes: [Like!]!
   comments: [Comment!]!
