@@ -10,7 +10,7 @@ export default {
           OR: [
             { title_contains: args.term },
             { text_contains: args.term },
-            { tags_some: args.term },
+            { tags_starts_with: args.term },
             { location_starts_with: args.term }
           ]
         }
