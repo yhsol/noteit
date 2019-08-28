@@ -75,9 +75,9 @@ type Room {
 type Message {
   id: ID! @id
   text: String!
-  from: User! @relation(name: "From")
-  to: User! @relation(name: "To")
-  room: Room
+  from: User @relation(name: "From")
+  to: User @relation(name: "To")
+  room: Room!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }
