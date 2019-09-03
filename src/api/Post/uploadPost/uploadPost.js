@@ -17,19 +17,30 @@ export default {
         },
         text,
         title,
-        tags,
         location
       });
-      files.forEach(async file => {
-        await prisma.createFile({
-          url: file,
-          post: {
-            connect: {
-              id: post.id
-            }
-          }
-        });
-      });
+      {
+        tags &&
+          tags.array.forEach(async tag => {
+            await prisma.createTag({
+              text: tag,
+              post: {
+                id: post.id
+              }
+            });
+          });
+      }
+      {
+        files &&
+          files.array.forEach(async file => {
+            await prisma.createFile({
+              url: file,
+              post: {
+                id: post.id
+              }
+            });
+          });
+      }
       return post;
     }
   }

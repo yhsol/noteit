@@ -2,8 +2,8 @@ type Mutation {
   uploadPost(
     text: String!
     title: String!
-    files: [String!]!
-    tags: [String]
+    files: [String]
+    tags: [Tag]
     location: String
   ): Post!
 }

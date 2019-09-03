@@ -18,7 +18,6 @@ export default {
             data: {
               title,
               text,
-              tags,
               location
             }
           });
@@ -28,6 +27,16 @@ export default {
       } else {
         throw Error("You can't do that!");
       }
+      tags.forEach(async tag => {
+        await prisma.updateTag({
+          text: tag,
+          post: {
+            connect: {
+              id: post.id
+            }
+          }
+        });
+      });
       files.forEach(async file => {
         await prisma.updateFile({
           url: file,
