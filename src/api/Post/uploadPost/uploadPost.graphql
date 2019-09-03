@@ -3,7 +3,7 @@ type Mutation {
     text: String!
     title: String!
     files: [String]
-    tags: [Tag]
+    tags: [String]
     location: String
   ): Post!
 }

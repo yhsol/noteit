@@ -41,8 +41,9 @@ type Post {
 }
 
 type Tag {
-  id: Id!
+  id: ID!
   post: Post
+  text: String
   createdAt: String
   updatedAt: String
 }
