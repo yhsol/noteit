@@ -1,6 +1,6 @@
 type User {
   id: ID! @id
-  avatar: String
+  avatar: String @default(value: "Hello")
   username: String! @unique
   email: String! @unique
   firstName: String! @default(value: "first name")
@@ -9,7 +9,7 @@ type User {
   following: [User!]! @relation(name: "FollowRelation")
   followers: [User!]! @relation(name: "FollowRelation")
   posts: [Post!]! @relation(name: "PostOfUser", onDelete: CASCADE)
-  likes: [Like!]! @relation(name: "LikeOfUser", onDelete: CASCADE)
+  likes: [Like] @relation(name: "LikeOfUser", onDelete: CASCADE)
   comments: [Comment!]! @relation(name: "CommentOfUser", onDelete: CASCADE)
   rooms: [Room!]! @relation(name: "RoomOfUser", onDelete: CASCADE)
   loginSecret: String
@@ -25,7 +25,7 @@ type Post {
   files: [File] @relation(name: "FileOfPost", onDelete: CASCADE)
   location: String
   tags: [Tag] @relation(name: "TagOfPost", onDelete: CASCADE)
-  likes: [Like!]! @relation(name: "LikeOfPost", onDelete: CASCADE)
+  likes: [Like] @relation(name: "LikeOfPost", onDelete: CASCADE)
   comments: [Comment!]! @relation(name: "CommentOfPost", onDelete: CASCADE)
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt

@@ -9,7 +9,7 @@ type User {
   following: [User!]!
   followers: [User!]!
   posts: [Post!]!
-  likes: [Like!]!
+  likes: [Like]
   comments: [Comment!]!
   rooms: [Room!]!
   loginSecret: String
@@ -31,7 +31,7 @@ type Post {
   files: [File]
   tags: [Tag]
   location: String
-  likes: [Like!]!
+  likes: [Like]
   comments: [Comment!]!
   isLiked: Boolean!
   commentCount: Int!
