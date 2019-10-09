@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.6.2",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.3"
   },
   "scripts": {
     "deploy": "prisma deploy",
