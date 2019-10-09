@@ -1,6 +1,5 @@
 import { isAuthenticated } from "../../../middlewares";
 import { prisma } from "../../../../generated/prisma-client";
-import { ROOM_FRAGMENT } from "../../../../fragment";
 
 export default {
   Query: {
@@ -12,7 +11,7 @@ export default {
         participants_some: { id: user.id }
       });
       if (canSeeRoom) {
-        return prisma.room({ id }).$fragment(ROOM_FRAGMENT);
+        return prisma.room({ id });
       } else {
         throw Error("You did not Authenticated");
       }

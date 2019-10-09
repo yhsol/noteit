@@ -1,4 +1,3 @@
-import "./env";
 import passport from "passport";
 import { Strategy, ExtractJwt } from "passport-jwt";
 import { prisma } from "../generated/prisma-client";
