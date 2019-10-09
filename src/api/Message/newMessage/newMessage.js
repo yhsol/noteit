@@ -1,5 +1,3 @@
-import { prisma } from "../../../../../insta-clone-graqhQl/generated/prisma-client";
-
 export default {
   Subscription: {
     newMessage: {
