@@ -4,6 +4,7 @@ import logger from "morgan";
 import schema from "./schema";
 import "./passport";
 import { authenticateJwt } from "./passport";
+import { isAuthenticated } from "../middleware";
 
 const PORT = process.env.PORT || 4010;
 
