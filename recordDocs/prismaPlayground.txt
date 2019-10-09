@@ -1,3 +1,0 @@
-playground 에서 data 를 업데이트 할 경우 해당 타입과 연결된 (예를들어 post 의 tag 와 같은 경우)
-data: { tags: { create: { text: "text for tag"}}} 와 같은 식으로,
-create 등을 써야한다.
