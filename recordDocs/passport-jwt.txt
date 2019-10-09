@@ -1,0 +1,1 @@
+https://github.com/mikenicholson/passport-jwt
