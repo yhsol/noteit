@@ -1,3 +1,0 @@
-frontend 에서 데이터를 요청하면 그 요청은 prisma server 로 전달되고, 거기서 database 로 요청하여 데이터를 전달 받게 된다.
-그 과정에서 prisma 와 연결할 수 있게 하는 것이 generated 폴더의 prisma-client 이다.
-prisma-client 에서 prisma 를 가져와서 데이트를 요청하고, 가져올 수 있다.
