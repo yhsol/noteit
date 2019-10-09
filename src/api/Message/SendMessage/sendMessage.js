@@ -1,4 +1,4 @@
-import { isAuthenticated } from "../../../middleware";
+import { isAuthenticated } from "../../../middlewares";
 import { prisma } from "../../../../generated/prisma-client";
 import { ROOM_FRAGMENT } from "../../../../fragment";
 

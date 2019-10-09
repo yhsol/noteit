@@ -1,4 +1,4 @@
-import { isAuthenticated } from "../../../middleware";
+import { isAuthenticated } from "../../../middlewares";
 import { prisma } from "../../../../generated/prisma-client";
 
 // TODO: files 들은 어떻게 올려야되지?

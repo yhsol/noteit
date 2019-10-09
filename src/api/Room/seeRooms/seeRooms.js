@@ -1,6 +1,6 @@
 import { prisma } from "../../../../generated/prisma-client";
 import { ROOM_FRAGMENT } from "../../../../fragment";
-import { isAuthenticated } from "../../../middleware";
+import { isAuthenticated } from "../../../middlewares";
 
 export default {
   Query: {
