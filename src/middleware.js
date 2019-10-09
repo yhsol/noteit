@@ -1,5 +1,5 @@
 export const isAuthenticated = request => {
-  if (!request.user) {
+  if (!request) {
     throw Error("You need to login!");
   }
   return;
